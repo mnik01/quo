@@ -4,6 +4,7 @@ import {
   Text as NText,
   FlatList as NFlatList,
   Button as NButton,
+  TouchableOpacity as NTouchableOpacity,
 } from 'react-native';
 
 
@@ -22,3 +23,7 @@ export const FlatList: FlatListType = NFlatList;
 type ButtonType = FC<React.ComponentProps<typeof NButton> & { className?: string }>;
 // @ts-ignore
 export const Button: ButtonType = NButton;
+
+type TouchableOpacityType = FC<React.ComponentProps<typeof NTouchableOpacity> & { className?: string }>;
+// @ts-ignore
+export const TouchableOpacity: TouchableOpacityType = NTouchableOpacity;
