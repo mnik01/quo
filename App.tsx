@@ -9,8 +9,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Profile } from './src/pages/Profile';
 import { Settings } from './src/pages/Settings';
 import { Auth } from './src/pages/Auth';
-import { TailwindProvider } from 'tailwind-rn';
-import utilities from './tailwind.json';
 
 // Refetch all data when App get internet connection
 onlineManager.setEventListener(setOnline =>
@@ -41,7 +39,6 @@ const App: VFC = () => {
   }, [])
 
   return (
-    <TailwindProvider utilities={utilities}>
       <NavigationContainer>
         <QueryClientProvider client={queryClient}>
           <StatusBar style="dark" />
@@ -53,6 +50,5 @@ const App: VFC = () => {
           </Stack.Navigator>
         </QueryClientProvider>
       </NavigationContainer>
-    </TailwindProvider>
 )}
 export default App;
