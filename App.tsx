@@ -4,11 +4,13 @@ import { useEffect, VFC } from 'react';
 import { AppState, AppStateStatus, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MyMusic } from './pages/MyMusic';
+import { MyMusic } from './src/pages/MyMusic';
 import { StatusBar } from 'expo-status-bar';
-import { Profile } from './pages/Profile';
-import { Settings } from './pages/Settings';
-import { Auth } from './pages/Auth';
+import { Profile } from './src/pages/Profile';
+import { Settings } from './src/pages/Settings';
+import { Auth } from './src/pages/Auth';
+import { TailwindProvider } from 'tailwind-rn';
+import utilities from './tailwind.json';
 
 // Refetch all data when App get internet connection
 onlineManager.setEventListener(setOnline =>
@@ -39,7 +41,8 @@ const App: VFC = () => {
   }, [])
 
   return (
-    <NavigationContainer>
+    <TailwindProvider utilities={utilities}>
+      <NavigationContainer>
         <QueryClientProvider client={queryClient}>
           <StatusBar style="dark" />
           <Stack.Navigator>
@@ -50,5 +53,6 @@ const App: VFC = () => {
           </Stack.Navigator>
         </QueryClientProvider>
       </NavigationContainer>
+    </TailwindProvider>
 )}
 export default App;

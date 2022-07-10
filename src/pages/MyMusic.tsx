@@ -1,14 +1,16 @@
 import { VFC } from "react";
 import { View, Text } from 'react-native';
 import { Fetcher } from '../components/Fetcher';
+import { useTailwind } from 'tailwind-rn';
 
 
 export const MyMusic: VFC = () => {
+  const tw = useTailwind();
 
   return (
-    <View className="flex-1 items-center justify-center bg-red-300">
+    <View style={tw("flex-1 items-center justify-center bg-red-300")}>
       <Fetcher />
-      <Text className="text-white text-3xl">My music</Text>
+      <Text style={tw("text-white text-3xl")}>My music</Text>
     </View>
   );
 }
