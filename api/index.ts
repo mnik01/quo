@@ -1,8 +1,9 @@
-// import axios from "axios";
+import axios from "axios";
 
 export const getTodos = async () => {
+  console.log('fetching todos');
   try {
-    // const response = await axios.get('/todos');
+    await axios.get('https://jsonplaceholder.typicode.com/albums');
     return ['1', '2', '3']
   } catch (error) {
     console.error(error);
