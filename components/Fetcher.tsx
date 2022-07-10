@@ -10,7 +10,7 @@ import {
   FlatList,
   Button,
   TouchableOpacity,
-} from './Natives'
+} from 'react-native'
 import { getTodos, postTodo } from '../api'
 
 

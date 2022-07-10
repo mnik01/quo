@@ -1,11 +1,14 @@
 import { QueryClient, QueryClientProvider, focusManager, onlineManager } from 'react-query'
-import { TailwindProvider } from 'tailwindcss-react-native';
 import NetInfo from '@react-native-community/netinfo'
-import { View, Text } from './components/Natives';
-import { Fetcher } from './components/Fetcher';
-import { StatusBar } from 'expo-status-bar';
 import { useEffect, VFC } from 'react';
 import { AppState, AppStateStatus, Platform } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MyMusic } from './pages/MyMusic';
+import { StatusBar } from 'expo-status-bar';
+import { Profile } from './pages/Profile';
+import { Settings } from './pages/Settings';
+import { Auth } from './pages/Auth';
 
 // Refetch all data when App get internet connection
 onlineManager.setEventListener(setOnline =>
@@ -25,6 +28,7 @@ function onAppStateChange(status: AppStateStatus) {
 }
 
 const queryClient = new QueryClient()
+const Stack = createNativeStackNavigator();
 
 const App: VFC = () => {
   // Refetch all data when App get focused
@@ -35,15 +39,16 @@ const App: VFC = () => {
   }, [])
 
   return (
-  <QueryClientProvider client={queryClient}>
-    <TailwindProvider>
-      <View className="flex-1 items-center justify-center bg-red-300">
-        <Text className="text-white text-3xl">Quo Vadis?</Text>
-        <Fetcher />
-        <StatusBar style="dark" />
-      </View>
-    </TailwindProvider>
-  </QueryClientProvider>
+    <NavigationContainer>
+        <QueryClientProvider client={queryClient}>
+          <StatusBar style="dark" />
+          <Stack.Navigator>
+            <Stack.Screen name="Авторизация" component={Auth} />
+            <Stack.Screen name="Моя музыка" component={MyMusic} />
+            <Stack.Screen name="Профиль" component={Profile} />
+            <Stack.Screen name="Настройки" component={Settings} />
+          </Stack.Navigator>
+        </QueryClientProvider>
+      </NavigationContainer>
 )}
-
 export default App;
