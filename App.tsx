@@ -4,6 +4,7 @@ import { View, Text } from './components/Natives';
 import { Fetcher } from './components/Fetcher';
 import { StatusBar } from 'expo-status-bar';
 import { VFC } from 'react';
+
 const queryClient = new QueryClient()
 
 const App: VFC = () => (
