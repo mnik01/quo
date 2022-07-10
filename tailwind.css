@@ -1,3 +1,23 @@
+.flex {
+  display: flex
+}
+
+.h-screen {
+  height: 100vh
+}
+
+.h-full {
+  height: 100%
+}
+
+.w-screen {
+  width: 100vw
+}
+
+.w-full {
+  width: 100%
+}
+
 .flex-1 {
   flex: 1 1 0%
 }
@@ -13,6 +33,19 @@
 .bg-red-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity))
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity))
+}
+
+.p-12 {
+  padding: 3rem
+}
+
+.p-24 {
+  padding: 6rem
 }
 
 .text-3xl {

@@ -8,7 +8,7 @@ export const Auth: VFC = () => {
   const tw = useTailwind();
 
   return (
-    <View style={tw("flex-1 items-center justify-center bg-red-300")}>
+    <View style={tw("flex w-full items-center bg-red-300 p-24 h-full")}>
       <Fetcher />
       <Text style={tw("text-white text-blue-600 text-3xl")}>Auth</Text>
     </View>

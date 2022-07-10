@@ -46,7 +46,7 @@ const App: VFC = () => {
         <QueryClientProvider client={queryClient}>
           <StatusBar style="dark" />
           <Stack.Navigator>
-            <Stack.Screen name="Авторизация" component={Auth} />
+            <Stack.Screen options={{headerShown: false}} name="Авторизация" component={Auth} />
             <Stack.Screen name="Моя музыка" component={MyMusic} />
             <Stack.Screen name="Профиль" component={Profile} />
             <Stack.Screen name="Настройки" component={Settings} />
