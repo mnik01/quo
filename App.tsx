@@ -10,6 +10,7 @@ import { Profile } from './src/pages/Profile';
 import { Settings } from './src/pages/Settings';
 import { Auth } from './src/pages/Auth';
 
+
 // Refetch all data when App get internet connection
 onlineManager.setEventListener(setOnline =>
   NetInfo.addEventListener(state => {

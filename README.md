@@ -1,5 +1,6 @@
 # Quo music application
 
-To run locally: ```
+To run locally:
+```
 expo start
 ```
