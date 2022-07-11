@@ -4,11 +4,13 @@ import { Fetcher } from '../components/Fetcher';
 
 
 export const Auth: VFC = () => {
+  // const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <View className="flex w-full items-center bg-red-300 p-24 h-full">
+    <View className="flex w-full items-center bg-white-100 p-24 h-full">
       <Fetcher />
-      <Text className="text-white text-3xl">Auth</Text>
+      {/* <Button onPress={() => {setIsLoading(true); sendSMS(number)}} type isLoading={false}>Выслать код</Button> */}
+      <Text className="text-black-100 text-3xl">Auth</Text>
     </View>
   );
 }
